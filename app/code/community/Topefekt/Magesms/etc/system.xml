@@ -33,6 +33,27 @@
 							<show_in_website>1</show_in_website>
 							<show_in_store>1</show_in_store>
 						</enable>
+						<customer_groups_enable translate="label,comment" module="magesms">
+							<label>Enable SMS sending for certain customer groups only</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>151</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</customer_groups_enable>
+						<customer_groups translate="label,comment" module="magesms">
+							<label>Customer Groups</label>
+							<frontend_type>multiselect</frontend_type>
+							<source_model>magesms/system_config_customergroups</source_model>
+							<depends>
+								<customer_groups_enable>1</customer_groups_enable>
+							</depends>
+							<sort_order>152</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>1</show_in_website>
+							<show_in_store>1</show_in_store>
+						</customer_groups>
 					</fields>
 				</magesms>
 				<template translate="label" module="magesms">
