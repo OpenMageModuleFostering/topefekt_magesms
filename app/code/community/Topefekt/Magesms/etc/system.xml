@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
+	<tabs>
+		<magesms_tab translate="label" module="magesms">
+			<label>Mage SMS</label>
+			<sort_order>500</sort_order>
+		</magesms_tab>
+	</tabs>
 	<sections>
 		<magesms translate="label" module="magesms">
-			<label>Mage SMS</label>
-			<tab>service</tab>
+			<label>Configuration</label>
+			<tab>magesms_tab</tab>
 			<frontend_type>text</frontend_type>
 			<sort_order>101</sort_order>
 			<show_in_default>1</show_in_default>
