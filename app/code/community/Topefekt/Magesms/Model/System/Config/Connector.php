@@ -10,7 +10,7 @@
  *
  * @category    TOPefekt
  * @package     TOPefekt_Magesms
- * @copyright   Copyright (c) 2012-2015 TOPefekt s.r.o. (http://www.mage-sms.com)
+ * @copyright   Copyright (c) 2012-2017 TOPefekt s.r.o. (http://www.mage-sms.com)
  * @license     http://opensource.org/licenses/BSD-3-Clause
  */
-class Topefekt_Magesms_Model_System_Config_Connector { public function toOptionArray() { return array( array( 'value' => '', 'label' => 'Auto (SSL priority)', ), array( 'value' => 'ssl', 'label' => 'fsockopen (SSL)', ), array( 'value' => 'curl-ssl', 'label' => 'CURL (SSL)', ), array( 'value' => 'no-ssl', 'label' => 'fsockopen (no-SSL)', ), array( 'value' => 'curl', 'label' => 'CURL (no-SSL)', ), ); } } 
+class Topefekt_Magesms_Model_System_Config_Connector { public function toOptionArray() { return array( array( 'value' => '', 'label' => Mage::helper('magesms')->__('Auto (SSL priority)'), ), array( 'value' => 'ssl', 'label' => Mage::helper('magesms')->__('fsockopen (SSL)'), ), array( 'value' => 'curl-ssl', 'label' => Mage::helper('magesms')->__('CURL (SSL)'), ), array( 'value' => 'no-ssl', 'label' => Mage::helper('magesms')->__('fsockopen (no-SSL)'), ), array( 'value' => 'curl', 'label' => Mage::helper('magesms')->__('CURL (no-SSL)'), ), ); } } 

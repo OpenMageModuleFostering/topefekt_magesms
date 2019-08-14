@@ -64,6 +64,11 @@
 							<action>adminhtml/magesms_wizard</action>
 							<sort_order>8</sort_order>
 						</wizard>
+						<system_config translate="title" module="magesms">
+							<title>System Settings</title>
+							<action>adminhtml/system_config/edit/section/magesms</action>
+							<sort_order>100</sort_order>
+						</system_config>
 					</children>
 				</settings>
 				<about translate="title" module="magesms">
@@ -125,6 +130,9 @@
 									<wizard translate="title" module="magesms">
 										<title>SMS Settings</title>
 									</wizard>
+									<system_config translate="title" module="magesms">
+										<title>System Settings</title>
+									</system_config>
 								</children>
 							</settings>
 							<about translate="title" module="magesms">

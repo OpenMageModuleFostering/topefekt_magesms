@@ -1,0 +1,16 @@
+<?php
+/**
+ * Mage SMS - SMS notification & SMS marketing
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the BSD 3-Clause License
+ * It is available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/BSD-3-Clause
+ *
+ * @category    TOPefekt
+ * @package     TOPefekt_Magesms
+ * @copyright   Copyright (c) 2012-2017 TOPefekt s.r.o. (http://www.mage-sms.com)
+ * @license     http://opensource.org/licenses/BSD-3-Clause
+ */
+?><div class="margin-form"><label for="name"><?php echo Mage::helper('magesms')->__('Send birthday message'); ?>: </label><select name="delay"><?php foreach ($this->getDelay() as $delay): ?><option value="<?php echo $delay['value']; ?>" <?php echo $delay['selected'] ? 'selected' : ''; ?>><?php echo $delay['title']; ?></option><?php endforeach; ?></select><select name="run_time_hour"><?php for($hour=1;$hour<=24;$hour++): ?><option value="<?php echo $hour; ?>" <?php echo $this->getRunTimeHour() == $hour ? 'selected' : ''; ?>><?php printf('%02d', $hour); ?></option><?php endfor; ?></select>:<select name="run_time_min"><?php for($min=0;$min<=59;$min++): ?><option value="<?php echo $min; ?>" <?php echo $this->getRunTimeMinute() == $min ? 'selected' : ''; ?>><?php printf('%02d', $min); ?></option><?php endfor; ?></select></div>

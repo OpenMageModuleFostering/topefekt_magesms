@@ -10,7 +10,7 @@
  *
  * @category    TOPefekt
  * @package     TOPefekt_Magesms
- * @copyright   Copyright (c) 2012-2015 TOPefekt s.r.o. (http://www.mage-sms.com)
+ * @copyright   Copyright (c) 2012-2017 TOPefekt s.r.o. (http://www.mage-sms.com)
  * @license     http://opensource.org/licenses/BSD-3-Clause
  */
 class Topefekt_Magesms_Block_Marketing_Form extends Mage_Adminhtml_Block_Widget_Form { protected function _prepareForm() { $id7c8c8e1d1b44e9917ce2ae9b4c7d03e2a3ab683 = $this->getUrl('*/*/filter', array('action' => 'applyFilter')); $i1791b2d1f89bb2bd83b34046f59125af207713db = new Varien_Data_Form( array('id' => 'marketing_filter', 'action' => $id7c8c8e1d1b44e9917ce2ae9b4c7d03e2a3ab683, 'method' => 'get', 'onsubmit' => 'applyFilter(\'marketing_filter\'); return false;') ); $i5a4070f5dbe2b3be0f175bc31d21ce8a0e2e76dd = 'magesms_marketing_'; $i1791b2d1f89bb2bd83b34046f59125af207713db->setHtmlIdPrefix($i5a4070f5dbe2b3be0f175bc31d21ce8a0e2e76dd); $i1791b2d1f89bb2bd83b34046f59125af207713db->setUseContainer(true); $i1791b2d1f89bb2bd83b34046f59125af207713db->addField('customer_not', 'hidden', array( 'name' => 'customer_not', )); $i00f9b0a11b6d8c15e9d603e29ad96b2c88140a51 = $i1791b2d1f89bb2bd83b34046f59125af207713db->addFieldset('base_fieldset', array( 'legend' => Mage::helper('magesms')->__('SMS Marketing - bulk SMS filter'), ) ); $i6710129c3d74d2fb5df97ccbaab2621e9e5c1bf9 = '<a onclick="resetFilter(this);return false;" title="'.$this->__('Reset Filter').'" href="'.$this->getUrl('*/*/filter', array('action' => 'reset')).'">['.$this->__('Reset Filter').']</a>

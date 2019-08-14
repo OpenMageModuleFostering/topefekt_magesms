@@ -10,11 +10,11 @@
  *
  * @category    TOPefekt
  * @package     TOPefekt_Magesms
- * @copyright   Copyright (c) 2012-2015 TOPefekt s.r.o. (http://www.mage-sms.com)
+ * @copyright   Copyright (c) 2012-2017 TOPefekt s.r.o. (http://www.mage-sms.com)
  * @license     http://opensource.org/licenses/BSD-3-Clause
  */
  $iddb18dc4afa6663cf07a52c741943ff87cbe3896 = $this; $iddb18dc4afa6663cf07a52c741943ff87cbe3896->run("
-INSERT INTO {$this->getTable('magesms_country')} (`name`, `vat`, `currency`) VALUES
+INSERT IGNORE INTO {$this->getTable('magesms_country')} (`name`, `vat`, `currency`) VALUES
 	('Albania', 0, 'EUR'), ('Algeria', 0, 'EUR'), ('Angola', 0, 'EUR'), ('Argentina', 0, 'EUR'), ('Armenia', 0, 'EUR'),
 	('Australia', 0, 'EUR'), ('Austria', 1, 'EUR'), ('Azerbaijan', 0, 'EUR'), ('Bahrain', 0, 'EUR'), ('Bangladesh', 0, 'EUR'),
 	('Belarus', 0, 'EUR'), ('Belgium', 1, 'EUR'), ('Belize', 0, 'EUR'), ('Bhutan', 0, 'EUR'), ('Bolivia', 0, 'EUR'),
@@ -144,7 +144,7 @@ INSERT INTO {$this->getTable('magesms_country')} (`name`, `vat`, `currency`) VAL
 ('Yemen', 0, 'EUR'),
 ('Zimbabwe', 0, 'EUR');
 "); $iddb18dc4afa6663cf07a52c741943ff87cbe3896->run("
-INSERT INTO {$this->getTable('magesms_country_area')} (`country_name`, `area`) VALUES
+INSERT IGNORE INTO {$this->getTable('magesms_country_area')} (`country_name`, `area`) VALUES
 ('Czech Republic', 420),
 ('Slovak Republic', 421),
 ('Argentina', 54),
@@ -293,7 +293,7 @@ INSERT INTO {$this->getTable('magesms_country_area')} (`country_name`, `area`) V
 ('Philippines', 63),
 ('China', 86);
 "); $iddb18dc4afa6663cf07a52c741943ff87cbe3896->run("
-INSERT INTO {$this->getTable('magesms_country_lang')} (`country_name`, `lang`, `iso2`) VALUES
+INSERT IGNORE INTO {$this->getTable('magesms_country_lang')} (`country_name`, `lang`, `iso2`) VALUES
 ('Albania', 'sq', 'en'),
 ('Algeria', 'ar-dz', 'en'),
 ('Angola', 'kj', 'en'),
@@ -628,7 +628,7 @@ INSERT INTO {$this->getTable('magesms_hooks')} (`name`, `info`, `owner`, `group`
 ('productLowStock', 'Ürün stokta yok', 3, 3, '', '', 'Bu ürün stokta bitmek üzere, id: {product_id}, ref: {product_ref}, isim: {product_name}, mevcut miktar: {product_quantity}. Bilgilendirme {shop_name}.', '', '{shop_domain}, {shop_name}, {shop_email}, {shop_phone}<br /><br />{customer_id}, {customer_email}, {customer_lastname}, {customer_firstname}<br /><br />{product_id}, {product_quantity}, {product_name}, {product_ref}, {product_supplier_ref}, {product_ean13}, {product_upc}, {product_supplier_id}, {product_supplier}', 'tr'),
 ('productLowStock', 'Este artigo não está em estoque', 3, 3, '', '', 'Este artigo está a acabar-se em estoque, id: {product_id}, ref: {product_ref}, nome: {product_name}, quantidade: {product_quantity}. Informações de {shop_name}.', '', '{shop_domain}, {shop_name}, {shop_email}, {shop_phone}<br /><br />{customer_id}, {customer_email}, {customer_lastname}, {customer_firstname}<br /><br />{product_id}, {product_quantity}, {product_name}, {product_ref}, {product_supplier_ref}, {product_ean13}, {product_upc}, {product_supplier_id}, {product_supplier}', 'pt');
 "); $iddb18dc4afa6663cf07a52c741943ff87cbe3896->run("
-INSERT INTO {$this->getTable('magesms_maps')} (`area`, `number`) VALUES
+INSERT IGNORE INTO {$this->getTable('magesms_maps')} (`area`, `number`) VALUES
 					(1, 9),(1, 10),(7, 10),(7, 10),(7, 10),(20, 9),(27, 6),(27, 7),(27, 8),(27, 9),(27, 10),(27, 11),(27, 12),
 					(30, 10),(31, 9),(32, 9),(33, 9),(34, 9),(36, 9),(39, 10),(40, 9),(41, 9),(43, 10),(43, 11),(44, 10),(44, 10),(45, 8),
 					(45, 8),(46, 9),(47, 8),(48, 9),(48, 9),(48, 9),(49,10),(49, 11),(51, 10),(51, 11),(52, 10),(53, 7),(53, 8),(53, 9),
@@ -650,7 +650,7 @@ INSERT INTO {$this->getTable('magesms_maps')} (`area`, `number`) VALUES
 					(966, 9),(967, 9),(968, 8),(971, 9),(972, 9),(973, 8),(973, 8),(974, 7),(974, 7),(975, 8),(976, 8),(977, 9),
 					(992, 9),(993, 8),(994, 9),(995, 8),(996,9),(998, 9);
 "); $iddb18dc4afa6663cf07a52c741943ff87cbe3896->run("
-INSERT INTO {$this->getTable('magesms_variables')} (`name`, `template`, `translate`) VALUES
+INSERT IGNORE INTO {$this->getTable('magesms_variables')} (`name`, `template`, `translate`) VALUES
 ('order_id', '000054', 0),
 ('order_reference', 'REF000054', 0),
 ('order_payment', 'Bank wire', 1),
@@ -731,5 +731,12 @@ INSERT INTO {$this->getTable('magesms_variables')} (`name`, `template`, `transla
 ('customer_message_short2', 'test message - max 100 chars', 1),
 ('customer_message_short3', 'test message - max 80 chars', 1),
 ('total_paid', '464', 0),
-('customer_name', 'John DOE', 0);
-"); if ($i593f9fb6306ab4cdb862f1ef6769504d63647c90 = Mage::helper('magesms')->detectLang(true)) { Mage::getModel('core/config')->saveConfig('magesms/template/language', $i593f9fb6306ab4cdb862f1ef6769504d63647c90); Mage::getConfig()->reinit(); Mage::app()->reinitStores(); } if (!Mage::getStoreConfig('magesms/appId')) { Mage::getModel('core/config')->saveConfig('magesms/appId', 'ms'.rand(1000000,90000000)); Mage::getConfig()->reinit(); Mage::app()->reinitStores(); } 
+('customer_name', 'John DOE', 0),
+('customer_password', '********', 0),
+('order_payment_html', 'Bank Transfer Payment Account number: 1234567890 Sort code 1234', 0),
+('customer_shipping_firstname', 'John', 0),
+('customer_shipping_lastname', 'DOE', 0),
+('order_subtotal', '450', 0),
+('order_shipping_amount', '14', 0),
+('code', '123456', 0);
+"); if ($i593f9fb6306ab4cdb862f1ef6769504d63647c90 = Mage::helper('magesms')->detectLang(true)) { Mage::getModel('core/config')->saveConfig('magesms/template/language', $i593f9fb6306ab4cdb862f1ef6769504d63647c90); Mage::getConfig()->reinit(); Mage::app()->reinitStores(); } if (!Mage::getStoreConfig('magesms/appId')) { Mage::getModel('core/config')->saveConfig('magesms/appId', 'ms'.mt_rand(1000000,90000000)); Mage::getConfig()->reinit(); Mage::app()->reinitStores(); } 

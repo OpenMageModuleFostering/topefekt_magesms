@@ -2,7 +2,7 @@
 <config>
 	<modules>
 		<Topefekt_Magesms>
-			<version>1.4.7</version>
+			<version>1.5.1</version>
 		</Topefekt_Magesms>
 	</modules>
 
@@ -19,6 +19,11 @@
 					<data>Topefekt_Magesms_Helper_Data</data>
 				</rewrite>
 			</magesms>
+			<customer>
+				<rewrite>
+					<data>Topefekt_Magesms_Helper_Customer</data>
+				</rewrite>
+			</customer>
 			<adminhtml>
 				<rewrite>
 					<data>Topefekt_Magesms_Helper_Adminhtml_Data</data>
@@ -102,6 +107,9 @@
 					<optout_order>
 						<table>magesms_optout_order</table>
 					</optout_order>
+					<birthdaymessages_template>
+						<table>magesms_birthdaymessages_template</table>
+					</birthdaymessages_template>
 				</entities>
 			</magesms_mysql4>
 			<cataloginventory_resource>
@@ -138,6 +146,14 @@
 					</Topefekt_Magesms_ProductStock>
 				</observers>
 			</cataloginventory_stock_item_save_after>
+			<sales_order_place_before>
+				<observers>
+					<Topefekt_Magesms_NewOrderOTP>
+						<class>magesms/observer</class>
+						<method>newOrderOTP</method>
+					</Topefekt_Magesms_NewOrderOTP>
+				</observers>
+			</sales_order_place_before>
 			<sales_order_place_after>
 				<observers>
 					<Topefekt_Magesms_NewOrder>
@@ -170,6 +186,34 @@
 					</Topefekt_Magesms_LockSku>
 				</observers>
 			</catalog_product_edit_action>
+			<topefekt_magesms_customersms_groups>
+				<observers>
+					<Topefekt_BirthdayMessages_CustomersmsGroups>
+						<class>magesms/birthdaymessages_observer</class>
+						<method>customersmsGroups</method>
+					</Topefekt_BirthdayMessages_CustomersmsGroups>
+					<Topefekt_Magesms_Otp_Account>
+						<class>magesms/otp_observer</class>
+						<method>customersmsGroupsAccount</method>
+					</Topefekt_Magesms_Otp_Account>
+					<Topefekt_Magesms_Otp_Order>
+						<class>magesms/otp_observer</class>
+						<method>ordersmsGroupsAccount</method>
+					</Topefekt_Magesms_Otp_Order>
+					<Topefekt_Magesms_Otp_Checkout>
+						<class>magesms/otp_observer</class>
+						<method>checkoutCustomer</method>
+					</Topefekt_Magesms_Otp_Checkout>
+				</observers>
+			</topefekt_magesms_customersms_groups>
+			<topefekt_magesms_customersms_save>
+				<observers>
+					<Topefekt_BirthdayMessages_CustomersmsSave>
+						<class>magesms/birthdaymessages_observer</class>
+						<method>save</method>
+					</Topefekt_BirthdayMessages_CustomersmsSave>
+				</observers>
+			</topefekt_magesms_customersms_save>
 		</events>
 	</global>
 
@@ -201,6 +245,16 @@
 				</magesms>
 			</updates>
 		</layout>
+		<events>
+			<adminhtml_widget_container_html_before>
+				<observers>
+					<Topefekt_Magesms_AddButtonSendSms>
+						<class>magesms/observer</class>
+						<method>adminhtmlWidgetContainerHtmlBefore</method>
+					</Topefekt_Magesms_AddButtonSendSms>
+				</observers>
+			</adminhtml_widget_container_html_before>
+		</events>
 	</adminhtml>
 	<frontend>
 		<events>
@@ -228,6 +282,18 @@
 					</Topefekt_Magesms_ClearOptout>
 				</observers>
 			</sales_quote_remove_item>
+			<core_block_abstract_to_html_after>
+				<observers>
+					<Topefekt_Magesms_CheckoutOrderOTP>
+						<class>magesms/observer</class>
+						<method>checkoutOrderOTP</method>
+					</Topefekt_Magesms_CheckoutOrderOTP>
+					<Topefekt_Magesms_CheckoutCustomerOTP>
+						<class>magesms/observer</class>
+						<method>checkoutCustomerOTP</method>
+					</Topefekt_Magesms_CheckoutCustomerOTP>
+				</observers>
+			</core_block_abstract_to_html_after>
 		</events>
 		<routers>
 			<magesms>
@@ -237,6 +303,13 @@
 					<frontName>magesms</frontName>
 				</args>
 			</magesms>
+			<customer>
+				<args>
+					<modules>
+						<topefekt_magesms before="Mage_Customer">Topefekt_Magesms</topefekt_magesms>
+					</modules>
+				</args>
+			</customer>
 		</routers>
 		<layout>
 			<updates>
@@ -271,7 +344,18 @@
 			<magesms>
 				<enable>1</enable>
 			</magesms>
+			<smsvalid>
+				<code_length>6</code_length>
+				<code_lifetime>600</code_lifetime>
+				<session_lifetime>3600</session_lifetime>
+			</smsvalid>
 		</magesms>
+		<birthdaymessages>
+			<template>
+				<default></default>
+				<time>7:00:00</time>
+			</template>
+		</birthdaymessages>
 	</default>
 	<crontab>
 		<jobs>
@@ -283,6 +367,14 @@
 					<model>magesms/observer::cronUpdate</model>
 				</run>
 			</topefekt_magesms>
+			<topefekt_birthdaymessages>
+				<schedule>
+					<cron_expr>*/1 * * * *</cron_expr>
+				</schedule>
+				<run>
+					<model>magesms/birthdaymessages_observer::cron</model>
+				</run>
+			</topefekt_birthdaymessages>
 		</jobs>
 	</crontab>
 </config>

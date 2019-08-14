@@ -10,7 +10,7 @@
  *
  * @category    TOPefekt
  * @package     TOPefekt_Magesms
- * @copyright   Copyright (c) 2012-2015 TOPefekt s.r.o. (http://www.mage-sms.com)
+ * @copyright   Copyright (c) 2012-2017 TOPefekt s.r.o. (http://www.mage-sms.com)
  * @license     http://opensource.org/licenses/BSD-3-Clause
  */
 class Topefekt_Magesms_Block_Template extends Mage_Core_Block_Template { public $profile; public $newversion; public function _construct() { parent::_construct(); $this->profile = Mage::getSingleton('magesms/smsprofile'); } public function getFilterUrl() { $this->getRequest()->setParam('filter', null); $this->getRequest()->setParam('sms', null); return $this->getUrl('*/*/', array('_current' => true)); } } 
