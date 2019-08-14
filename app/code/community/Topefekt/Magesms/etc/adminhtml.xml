@@ -11,7 +11,7 @@
 					<sort_order>1</sort_order>
 				</sendsms>
 				<marketing translate="title" module="magesms">
-					<title>SMS Marketing</title>
+					<title>Marketing SMS</title>
 					<action>adminhtml/magesms_marketing</action>
 					<sort_order>2</sort_order>
 				</marketing>
@@ -85,7 +85,7 @@
 								<title>Send SMS</title>
 							</sendsms>
 							<marketing translate="title" module="magesms">
-								<title>SMS Marketing</title>
+								<title>Marketing SMS</title>
 							</marketing>
 							<history translate="title" module="magesms">
 								<title>SMS History</title>
