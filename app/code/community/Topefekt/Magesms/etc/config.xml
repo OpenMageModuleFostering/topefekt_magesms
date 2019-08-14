@@ -2,7 +2,7 @@
 <config>
 	<modules>
 		<Topefekt_Magesms>
-			<version>1.3.1</version>
+			<version>1.3.2</version>
 		</Topefekt_Magesms>
 	</modules>
 
@@ -150,14 +150,14 @@
 					</Topefekt_Magesms_UpdateOrderStatus>
 				</observers>
 			</sales_order_save_after>
-			<sales_order_shipment_save_after>
+			<sales_order_shipment_track_save_after>
 				<observers>
 					<Topefekt_Magesms_UpdateOrderTrackingNumber>
 						<class>magesms/observer</class>
 						<method>updateOrderTrackingNumber</method>
 					</Topefekt_Magesms_UpdateOrderTrackingNumber>
 				</observers>
-			</sales_order_shipment_save_after>
+			</sales_order_shipment_track_save_after>
 			<catalog_product_edit_action>
 				<observers>
 					<Topefekt_Magesms_LockSku>
