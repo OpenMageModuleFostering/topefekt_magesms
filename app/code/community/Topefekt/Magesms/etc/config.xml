@@ -2,7 +2,7 @@
 <config>
 	<modules>
 		<Topefekt_Magesms>
-			<version>1.1.5</version>
+			<version>1.2.0</version>
 		</Topefekt_Magesms>
 	</modules>
 
@@ -93,6 +93,12 @@
 					<routes_alternative>
 						<table>magesms_routes_alternative</table>
 					</routes_alternative>
+					<template>
+						<table>magesms_template</table>
+					</template>
+					<marketing_filter>
+						<table>magesms_marketing_filter</table>
+					</marketing_filter>
 				</entities>
 			</magesms_mysql4>
 			<cataloginventory_resource>

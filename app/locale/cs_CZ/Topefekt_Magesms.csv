@@ -343,6 +343,7 @@
 "SMS Answers","SMS Odpovědi"
 "Send SMS","Odeslat SMS"
 "About","O modulu"
+"Possible variables:","Použitelné parametry:"
 "wrong number or unavailable","Špatné nebo nedostupné číslo"
 "unauthorized senderID in confirmation sms","neautorizované ID odesílatele v potvrzovací SMS"
 "low credit for sending sms","nízky kredit pro odeslání SMS zprávy"

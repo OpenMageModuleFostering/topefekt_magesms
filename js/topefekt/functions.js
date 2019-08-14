@@ -79,6 +79,9 @@ countitSMS = function(input, unicode, output) {
 		this.output.innerHTML = this.chartext1 + len + ', ' + this.chartext2 + ' ' + total;
 		if (this.marketingCount !== undefined) {
 			this.output.innerHTML += ', ' + this.marketingCustomers + ' ' + this.marketingCount + ', ' + this.marketingTotal + ' ' + total*this.marketingCount;
+			var cc = document.getElementById('magesms-marketing-countit');
+			if (cc)
+				cc.innerHTML = this.marketingCount;
 		}
 		if (this.alert && this.limit < total) {
 			this.input.value = this.input.value.substring(0, this.limit*(sms1-header));
@@ -169,12 +172,12 @@ magesmsAddRecipient = function(obj, output, form) {
 			parameters: {char:char},
 			//asynchronous: false,
 			onSuccess: function(transport) {
-				document.getElementById('loadingmask').style.display = 'none';
+				//document.getElementById('loadingmask').style.display = 'none';
 				self.render(transport.responseText, char);
 			}
 		});
 		this.output.innerHTML = '';
-		document.getElementById('loadingmask').style.display = 'block';
+		//document.getElementById('loadingmask').style.display = 'block';
 		return false;
 	}
 	
