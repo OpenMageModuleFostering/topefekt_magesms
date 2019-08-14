@@ -538,3 +538,8 @@
 "Dear Customer, status of your claim {return_id} has changed to ","Sehr geehrter Kunde, Zustand ihrer Retouren {return_id} wurde auf "
 ". Have a nice day, {shop_name}.","verändert. Wir wünschen Ihnen noch einen schönen Tag. , {shop_name}."
 "ADD/CHANGE TEXT SENDER ID","TEXTNUMMER HINZUFÜGEN/VERÄNDERN"
+"Add SMS product to cart:","Produkt SMS in den Einkaufskorbkorb legen:"
+"Automatically","automatisch"
+"Manually","manuell"
+"SMS opt-out - setting Marketing SMS opt-out option for the customer from the user profile","SMS opt-out - setting Marketing SMS opt-out option for the customer from the user profile"
+"Activate displaying Marketing SMS opt-out feature in the user profile","Activate displaying Marketing SMS opt-out feature in the user profile"

@@ -2,7 +2,7 @@
 <config>
 	<modules>
 		<Topefekt_Magesms>
-			<version>1.3.2</version>
+			<version>1.3.4</version>
 		</Topefekt_Magesms>
 	</modules>
 
@@ -99,6 +99,9 @@
 					<marketing_filter>
 						<table>magesms_marketing_filter</table>
 					</marketing_filter>
+					<optout_order>
+						<table>magesms_optout_order</table>
+					</optout_order>
 				</entities>
 			</magesms_mysql4>
 			<cataloginventory_resource>
@@ -111,6 +114,7 @@
 			<magesms_setup>
 				<setup>
 					<module>Topefekt_Magesms</module>
+					<class>Mage_Eav_Model_Entity_Setup</class>
 				</setup>
 				<connection>
 					<use>core_setup</use>
@@ -224,14 +228,6 @@
 					</Topefekt_Magesms_ClearOptout>
 				</observers>
 			</sales_quote_remove_item>
-			<checkout_cart_save_after>
-				<observers>
-					<Topefekt_Magesms_AllClearOptout>
-						<class>magesms/observer</class>
-						<method>cartRemoveAllClearOptout</method>
-					</Topefekt_Magesms_AllClearOptout>
-				</observers>
-			</checkout_cart_save_after>
 		</events>
 		<routers>
 			<magesms>
@@ -272,13 +268,16 @@
 			<template>
 				<language>en</language>
 			</template>
+			<magesms>
+				<enable>1</enable>
+			</magesms>
 		</magesms>
 	</default>
 	<crontab>
 		<jobs>
 			<topefekt_magesms>
 				<schedule>
-					<cron_expr>* * * * *</cron_expr>
+					<cron_expr>0 * * * *</cron_expr>
 				</schedule>
 				<run>
 					<model>magesms/observer::cronUpdate</model>

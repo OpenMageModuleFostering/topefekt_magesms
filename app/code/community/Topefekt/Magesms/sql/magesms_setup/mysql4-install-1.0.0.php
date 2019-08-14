@@ -10,7 +10,7 @@
  *
  * @category    TOPefekt
  * @package     TOPefekt_Magesms
- * @copyright   Copyright (c) 2012-2014 TOPefekt s.r.o. (http://www.mage-sms.com)
+ * @copyright   Copyright (c) 2012-2015 TOPefekt s.r.o. (http://www.mage-sms.com)
  * @license     http://opensource.org/licenses/BSD-3-Clause
  */
 $iddb18dc4afa6663cf07a52c741943ff87cbe3896 = $this; $iddb18dc4afa6663cf07a52c741943ff87cbe3896->startSetup(); $iddb18dc4afa6663cf07a52c741943ff87cbe3896->run("
@@ -228,4 +228,4 @@ CREATE TABLE {$this->getTable('magesms_variables')} (
 	UNIQUE KEY `name` (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-"); $iddb18dc4afa6663cf07a52c741943ff87cbe3896->endSetup(); 
+"); $iddb18dc4afa6663cf07a52c741943ff87cbe3896->endSetup(); if (version_compare(Mage::getVersion(), '1.6', '<')) { include_once dirname(__FILE__).'/../../data/magesms_setup/data-install-1.0.0.php'; } 

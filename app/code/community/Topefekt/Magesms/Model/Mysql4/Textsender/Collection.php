@@ -10,7 +10,7 @@
  *
  * @category    TOPefekt
  * @package     TOPefekt_Magesms
- * @copyright   Copyright (c) 2012-2014 TOPefekt s.r.o. (http://www.mage-sms.com)
+ * @copyright   Copyright (c) 2012-2015 TOPefekt s.r.o. (http://www.mage-sms.com)
  * @license     http://opensource.org/licenses/BSD-3-Clause
  */
  class Topefekt_Magesms_Model_Mysql4_Textsender_Collection extends Mage_Core_Model_Mysql4_Collection_Abstract { public function _construct() { parent::_construct(); $this->_init('magesms/textsender'); } }

@@ -10,7 +10,7 @@
  *
  * @category    TOPefekt
  * @package     TOPefekt_Magesms
- * @copyright   Copyright (c) 2012-2014 TOPefekt s.r.o. (http://www.mage-sms.com)
+ * @copyright   Copyright (c) 2012-2015 TOPefekt s.r.o. (http://www.mage-sms.com)
  * @license     http://opensource.org/licenses/BSD-3-Clause
  */
  $iddb18dc4afa6663cf07a52c741943ff87cbe3896 = $this; $iddb18dc4afa6663cf07a52c741943ff87cbe3896->startSetup(); $i195899c9895b81b9bc75dba762c949638a6f36dd = Mage::getModel('magesms/country_lang')->getCollection()->addFieldToFilter('lang', array('like' => 'fr-fr')); if (!$i195899c9895b81b9bc75dba762c949638a6f36dd->count()) { $iddb18dc4afa6663cf07a52c741943ff87cbe3896->run("INSERT INTO {$this->getTable('magesms_country_lang')} (`country_name`, `lang`, `iso2`) VALUES ('France', 'fr-fr', 'fr');"); } $iddb18dc4afa6663cf07a52c741943ff87cbe3896->run("
@@ -25,4 +25,4 @@ INSERT INTO `{$this->getTable('magesms_hooks')}` (`name`, `info`, `owner`, `grou
 ('productLowStock', 'Προϊόν εκτός αποθέματος', 3, 3, '', '', 'ΑΥΤΟ ΤΟ ΠΡΟΙΟΝ ΕΙΝΑΙ ΣΧΕΔΟΝ ΕΚΤΟΣ ΑΠΟΘΕΜΑΤΟΣ, ID: {product_id}, REF: {product_ref}, ΟΝΟΜΑ: {product_name}, ΤΡΕΧΟΥΣΑ ΠΟΣΟΤΗΤΑ: {product_quantity}. ΠΛΗΡΟΦ. ΑΠΟ {shop_name}.', '', '{shop_domain}, {shop_name}, {shop_email}, {shop_phone}<br /><br />{customer_id}, {customer_email}, {customer_lastname}, {customer_firstname}<br /><br />{product_id}, {product_quantity}, {product_name}, {product_ref}, {product_supplier_ref}, {product_ean13}, {product_upc}, {product_supplier_id}, {product_supplier}', 'el');
 
 UPDATE `{$this->getTable('magesms_country_lang')}` SET `iso2` = 'el' WHERE `country_name` LIKE 'Greece';
-"); 
+"); $iddb18dc4afa6663cf07a52c741943ff87cbe3896->endSetup(); 

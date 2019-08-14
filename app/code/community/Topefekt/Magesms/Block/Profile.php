@@ -10,7 +10,7 @@
  *
  * @category    TOPefekt
  * @package     TOPefekt_Magesms
- * @copyright   Copyright (c) 2012-2014 TOPefekt s.r.o. (http://www.mage-sms.com)
+ * @copyright   Copyright (c) 2012-2015 TOPefekt s.r.o. (http://www.mage-sms.com)
  * @license     http://opensource.org/licenses/BSD-3-Clause
  */
 class Topefekt_Magesms_Block_Profile extends Mage_Adminhtml_Block_Template { protected $_helper; public function __construct() { exit; parent::__construct(); $this->setTemplate('poll/poll.phtml'); $this->setFormAction(Mage::getUrl('*/*/new')); } } 

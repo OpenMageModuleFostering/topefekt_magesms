@@ -10,7 +10,7 @@
  *
  * @category    TOPefekt
  * @package     TOPefekt_Magesms
- * @copyright   Copyright (c) 2012-2014 TOPefekt s.r.o. (http://www.mage-sms.com)
+ * @copyright   Copyright (c) 2012-2015 TOPefekt s.r.o. (http://www.mage-sms.com)
  * @license     http://opensource.org/licenses/BSD-3-Clause
  */
 class Topefekt_Magesms_IndexController extends Mage_Core_Controller_Front_Action { public function indexAction() { $this->loadLayout(); $this->renderLayout(); } }
