@@ -92,19 +92,33 @@ countitSMS = function(input, unicode, output) {
 	}
 
 	this.help = function(obj) {
-		for (var key in this.translate) {
-			obj.innerHTML = obj.innerHTML.replaceAll('{'+key+'}', '<span class="help-hook" title="'+this.translate[key]+'">{'+key+'}</span>');
-			
+		if (obj.length) {
+			for (var i=0; i<obj.length; ++i) {
+				for (var key in this.translate) {
+					obj[i].innerHTML = obj[i].innerHTML.replaceAll('{'+key+'}', '<span class="help-hook" title="'+this.translate[key]+'">{'+key+'}</span>');
+				}
+			}
+			for (var j=0; j<obj.length; ++j) {
+				var hooks = obj[j].getElementsByClassName('help-hook');
+				for (var i=0; i<hooks.length; ++i) {
+					hooks[i].addEventListener('click', hooksEvent);
+				}
+			}
+		} else {
+			for (var key in this.translate) {
+				obj.innerHTML = obj.innerHTML.replaceAll('{'+key+'}', '<span class="help-hook" title="'+this.translate[key]+'">{'+key+'}</span>');
+			}
+			var hooks = obj.getElementsByClassName('help-hook');
+			for (var i=0; i<hooks.length; ++i) {
+				hooks[i].addEventListener('click', hooksEvent);
+			}
 		}
-		var hooks = obj.getElementsByClassName('help-hook');
-		for (var i=0; i<hooks.length; ++i) {
-			hooks[i].addEventListener('click', function() {
-				var position = self.getCursorPosition(self.copyFrom);
-				self.copyFrom.value = [self.copyFrom.value.slice(0, position), this.innerHTML, self.copyFrom.value.slice(position)].join('');
-				self.setCursorPosition(self.copyFrom, position + this.innerHTML.length);
-				self.count();
-			});
-		}
+	}
+	function hooksEvent() {
+		var position = self.getCursorPosition(self.copyFrom);
+		self.copyFrom.value = [self.copyFrom.value.slice(0, position), this.innerHTML, self.copyFrom.value.slice(position)].join('');
+		self.setCursorPosition(self.copyFrom, position + this.innerHTML.length);
+		self.count();
 	}
 	this.getCursorPosition = function(node) {
 		node.focus(); 
