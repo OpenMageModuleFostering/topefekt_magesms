@@ -501,3 +501,4 @@
 ". Info from {shop_name}.",". Info z {shop_name}."
 "Dear Customer, status of your claim {return_id} has changed to ","Vazeny zakaznik, stav Vasej reklamacie {return_id} sa zmenil na "
 ". Have a nice day, {shop_name}.",". Pekny den, {shop_name}."
+"ADD/CHANGE TEXT SENDER ID","PRIDAŤ/ZMENIŤ TEXTOVÉ ČÍSLO"

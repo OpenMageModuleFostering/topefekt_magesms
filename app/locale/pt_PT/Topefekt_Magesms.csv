@@ -537,3 +537,4 @@
 ". Info from {shop_name}.",". Informaçoes de {shop_name}."
 "Dear Customer, status of your claim {return_id} has changed to ","Caro cliente, o estado da sua devoluçao {return_id} modificou a "
 ". Have a nice day, {shop_name}.",". Bom dia, {shop_name}."
+"ADD/CHANGE TEXT SENDER ID","ADICIONAR/ALTERAR NÚMERO DE TEXTO"

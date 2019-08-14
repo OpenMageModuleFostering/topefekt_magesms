@@ -2,7 +2,7 @@
 <config>
 	<modules>
 		<Topefekt_Magesms>
-			<version>1.0.1</version>
+			<version>1.0.2</version>
 		</Topefekt_Magesms>
 	</modules>
 
@@ -90,6 +90,9 @@
 					<exceptions>
 						<table>magesms_exceptions</table>
 					</exceptions>
+					<routes_alternative>
+						<table>magesms_routes_alternative</table>
+					</routes_alternative>
 				</entities>
 			</magesms_mysql4>
 			<cataloginventory_resource>
