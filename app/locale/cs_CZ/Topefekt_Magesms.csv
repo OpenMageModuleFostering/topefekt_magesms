@@ -504,3 +504,6 @@
 "Dear Customer, status of your claim {return_id} has changed to ","Vazeny zakazniku, stav Vasi reklamace {return_id} se zmenil na "
 ". Have a nice day, {shop_name}.",". Krasny den, {shop_name}."
 "ADD/CHANGE TEXT SENDER ID","PŘIDAT/ZMĚNIT TEXTOVÉ ČÍSLO"
+"Delete history","Smazat historii"
+"Are you sure to delete SMS history?","Opravdu chcete smazat SMS historii?"
+"SMS history was deleted.","SMS historie byla smazána."

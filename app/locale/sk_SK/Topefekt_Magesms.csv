@@ -503,3 +503,6 @@
 ". Have a nice day, {shop_name}.",". Pekny den, {shop_name}."
 "ADD/CHANGE TEXT SENDER ID","PRIDAŤ/ZMENIŤ TEXTOVÉ ČÍSLO"
 "Possible variables:","Použiteľné parametre:"
+"Delete history","Zmazať históriu"
+"Are you sure to delete SMS history?","Naozaj chcete zmazať SMS históriu?"
+"SMS history was deleted.","SMS história byla zmazaná."
