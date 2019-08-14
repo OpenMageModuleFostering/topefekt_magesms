@@ -2,7 +2,7 @@
 <config>
 	<modules>
 		<Topefekt_Magesms>
-			<version>1.0.2</version>
+			<version>1.0.3</version>
 		</Topefekt_Magesms>
 	</modules>
 
@@ -152,6 +152,14 @@
 					</Topefekt_Magesms_UpdateOrderTrackingNumber>
 				</observers>
 			</sales_order_shipment_save_after>
+			<catalog_product_edit_action>
+				<observers>
+					<Topefekt_Magesms_LockSku>
+						<class>magesms/observer</class>
+						<method>lockSkuAttribute</method>
+					</Topefekt_Magesms_LockSku>
+				</observers>
+			</catalog_product_edit_action>
 		</events>
 	</global>
 
@@ -251,7 +259,7 @@
 				<sku>magesms23239512311</sku>
 			</optout>
 			<supported>
-				<versions>1.5.0.0 - 1.8.1.x</versions>
+				<versions>1.5 - 1.9</versions>
 			</supported>
 		</config>
 		<magesms>
