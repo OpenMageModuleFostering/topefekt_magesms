@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<sections>
+		<magesms translate="label" module="magesms">
+			<label>Mage SMS</label>
+			<tab>service</tab>
+			<frontend_type>text</frontend_type>
+			<sort_order>101</sort_order>
+			<show_in_default>1</show_in_default>
+			<show_in_website>1</show_in_website>
+			<show_in_store>1</show_in_store>
+			<groups>
+				<template translate="label" module="magesms">
+					<label>SMS Templates Language</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>102</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>0</show_in_website>
+					<show_in_store>0</show_in_store>
+					<fields>
+						<language translate="label,comment" module="magesms">
+							<label>Language</label>
+							<comment>Select language used in the SMS templates in Admin SMS and Customer SMS tabs.</comment>
+							<frontend_type>select</frontend_type>
+							<source_model>magesms/system_config_lang</source_model>
+							<sort_order>150</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>0</show_in_website>
+							<show_in_store>0</show_in_store>
+						</language>
+					</fields>
+				</template>
+			</groups>
+		</magesms>
+	</sections>
+</config>

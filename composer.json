@@ -1,0 +1,16 @@
+{
+    "name": "OpenMageModuleFostering/TOPefekt_Magesms",
+    "type": "magento-module",
+    "license": "BSD",
+    "homepage": "",
+    "description": "SMS notification & SMS marketing module for Magento",
+    "authors": [
+    {
+        "name": "Frantisek Barancik",
+        "email": "barancik@sirapy.cz"
+    }
+],
+    "suggest": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}
