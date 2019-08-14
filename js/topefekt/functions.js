@@ -1,28 +1,29 @@
 function popup_title(obj)
 {
-	var $ = jQuery;
-	var $this = $(obj);
-	var title = $this.attr('title');
-	$(".popup-title").fadeOut(500, function() {
-		$(this).remove();
-	});
-	var position = $this.position();
-	var popup = $("<p class='popup-title' style='display: none;'>" + title + "</p>");
-	$("body").append(popup);
-	popup.css("position", "absolute")
-		.css("top", (position.top-20)+"px")
-		.css("left", (position.left+10)+"px")
-		.css("max-width", "400px")
-		.css("background","black")
-		.css("color", "white")
-		.css("text-align", "left")
-		.css("padding", "5px")
-		.css("cursor", "pointer")
-		.fadeIn(500);
-	popup.click(function() {
-		$this.attr("title", $(this).text());
-		$(popup).fadeOut(500, function() { $(this).remove() });
-	});
+	var $this = obj;
+	var title = $this.title;
+	var elem = $("popup-title");
+	if (elem) {
+		elem.parentNode.removeChild(elem);
+	}
+	var position = $this.getBoundingClientRect();
+	$this.style.position = 'relative';
+	var popup = document.createElement('p');
+	popup.innerHTML = title;
+	popup.id = 'popup-title';
+	popup.style.position = 'absolute'
+	popup.style.top = (position.top-20)+'px';
+	popup.style.left = (position.left+10)+'px';
+	popup.style.background = 'black';
+	popup.style.color = 'white';
+	popup.style.cursor = 'pointer';
+	popup.style.maxWidth = '400px';
+	popup.style.padding = '5px';
+	popup.onclick = function() {
+		this.parentNode.removeChild(this);
+	}
+	//$this.appendChild(popup);
+	document.body.appendChild(popup);
 }
 
 countitSMS = function(input, unicode, output) {
@@ -163,11 +164,15 @@ magesmsAddRecipient = function(obj, output, form) {
 	this.load = function(char) {
 		if (!this.serviceUrl)
 			return;
-		jQuery.get(this.serviceUrl, {char:char})
-			.done(function(data){
+		new Ajax.Request(this.serviceUrl, {
+			method: 'get',
+			parameters: {char:char},
+			//asynchronous: false,
+			onSuccess: function(transport) {
 				document.getElementById('loadingmask').style.display = 'none';
-				self.render(data, char);
-			});
+				self.render(transport.responseText, char);
+			}
+		});
 		this.output.innerHTML = '';
 		document.getElementById('loadingmask').style.display = 'block';
 		return false;
