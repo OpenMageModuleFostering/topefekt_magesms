@@ -30,6 +30,40 @@
 						</language>
 					</fields>
 				</template>
+				<api translate="label" module="magesms">
+					<label>API</label>
+					<frontend_type>text</frontend_type>
+					<sort_order>103</sort_order>
+					<show_in_default>1</show_in_default>
+					<show_in_website>0</show_in_website>
+					<show_in_store>0</show_in_store>
+					<fields>
+						<active translate="label,comment" module="magesms">
+							<label>Enabled</label>
+							<comment>http://domain/magesms/api or http://domain/en/magesms/api</comment>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>100</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>0</show_in_website>
+							<show_in_store>0</show_in_store>
+						</active>
+						<apikey translate="label,comment" module="magesms">
+							<label>API Key</label>
+							<comment>API secured key</comment>
+							<frontend_type>text</frontend_type>
+							<frontend_model>magesms/system_config_apikeygenerator</frontend_model>
+							<depends>
+								<active>1</active>
+							</depends>
+							<validate>required-entry</validate>
+							<sort_order>150</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_website>0</show_in_website>
+							<show_in_store>0</show_in_store>
+						</apikey>
+					</fields>
+				</api>
 			</groups>
 		</magesms>
 	</sections>
